@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Pokemons</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+        <li class="breadcrumb-item active">Tables</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Peso</th>
+                        <th>Tipo</th>
+                        <th>altura</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pokemon in pokemons %}
+                    <tr>
+                        <td><a href="{% url 'pokemon_detail' id=pokemon.id %}">
+                                {{ pokemon.nombre_formateado }}
+                            </a></td>
+                        <td>{{ pokemon.weight }}</td>
+                        <td>
+                            {% for tipo in pokemon.types.all %}
+                            {{tipo.nombre}}{% if not forloop.last %},{% endif %}
+                            {% endfor %}
+                        </td>
+                        <td>{{pokemon.height}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

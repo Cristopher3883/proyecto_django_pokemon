@@ -1,0 +1,51 @@
+.pokemon-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 360px;
+}
+
+.imagen_pokemon {
+    display: block;
+    margin: 0 auto 1rem;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.pokemon-card h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Colores personalizados por tipo de stat */
+.bar-hp {
+    background-color: #ff5959 !important;
+}
+
+.bar-atk {
+    background-color: #f5ac78 !important;
+}
+
+.bar-def {
+    background-color: #fae078 !important;
+}
+
+.bar-spa {
+    background-color: #9db7f5 !important;
+}
+
+.bar-spd {
+    background-color: #a7db8d !important;
+}
+
+.bar-spe {
+    background-color: #fa92b2 !important;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}

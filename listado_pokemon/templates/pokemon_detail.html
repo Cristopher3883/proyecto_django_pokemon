@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="text-center mt-4">
+        <a href="{% url 'listado' %}" class="btn btn-primary">Volver</a>
+    </div>
+<div class="d-flex justify-content-center py-4 full-container">
+    <div class="pokemon-card">
+        <img class="imagen_pokemon" src="{{pokemon.img}}" alt="Blissey">
+        <h2 class="mb-4">{{ pokemon.nombre_formateado }}</h2>
+        <div class="pokemon-types d-flex justify-content-center gap-2 mb-3">
+            {% for type in pokemon.types.all %}
+            <img src="{{type.img}}" alt="{{type.nombre}}">
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            <div class="d-flex justify-content-between stat-label">
+                <span>HP</span><span>{{pokemon.hp}}</span>
+            </div>
+            <div class="progress" style="height: 12px;">
+                <div class="progress-bar bar-hp" role="progressbar" data-value="{{pokemon.hp}}"></div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="d-flex justify-content-between stat-label">
+                <span>Ataque</span><span>{{pokemon.attack}}</span>
+            </div>
+            <div class="progress" style="height: 12px;">
+                <div class="progress-bar bar-atk" role="progressbar" data-value="{{pokemon.attack}}"></div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="d-flex justify-content-between stat-label">
+                <span>Defensa</span><span>{{pokemon.defense}}</span>
+            </div>
+            <div class="progress" style="height: 12px;">
+                <div class="progress-bar bar-def" role="progressbar" data-value="{{pokemon.defense}}"></div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="d-flex justify-content-between stat-label">
+                <span>At. Esp.</span><span>{{pokemon.special_attack}}</span>
+            </div>
+            <div class="progress" style="height: 12px;">
+                <div class="progress-bar bar-spa" role="progressbar" data-value="{{pokemon.special_attack}}"></div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="d-flex justify-content-between stat-label">
+                <span>Def. Esp.</span><span>{{pokemon.special_defense}}</span>
+            </div>
+            <div class="progress" style="height: 12px;">
+                <div class="progress-bar bar-spd" role="progressbar" data-value="{{pokemon.special_defense}}"></div>
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <div class="d-flex justify-content-between stat-label">
+                <span>Velocidad</span><span>{{pokemon.speed}}</span>
+            </div>
+            <div class="progress" style="height: 12px;">
+                <div class="progress-bar bar-spe" role="progressbar" data-value="{{pokemon.speed}}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/estadistics_pokemons.js' %}"></script>
+{% endblock %}
