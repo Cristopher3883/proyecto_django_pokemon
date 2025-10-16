@@ -14,7 +14,8 @@ def listado_pokemons(request):
 
 def pokemon_detail(request,id):
     pokemon = get_object_or_404(Pokemon, id=id)
-    return render(request, 'pokemon_detail.html', {'pokemon': pokemon})
+    primer_tipo = pokemon.types.first()
+    return render(request, 'pokemon_detail.html', {'pokemon': pokemon,'primer_tipo':primer_tipo})
     
 
 
