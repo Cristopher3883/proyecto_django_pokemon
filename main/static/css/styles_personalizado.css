@@ -1,0 +1,207 @@
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pokemon-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    animation: fadeInDown 1s ease;
+}
+
+.imagen_pokemon {
+    display: block;
+    margin: 0 auto 1rem;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.pokemon-card h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Colores personalizados por tipo de stat */
+.bar-hp {
+    background-color: #ff5959 !important;
+}
+
+.bar-atk {
+    background-color: #f5ac78 !important;
+}
+
+.bar-def {
+    background-color: #fae078 !important;
+}
+
+.bar-spa {
+    background-color: #9db7f5 !important;
+}
+
+.bar-spd {
+    background-color: #a7db8d !important;
+}
+
+.bar-spe {
+    background-color: #fa92b2 !important;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.progress-bar {
+    width: 0%;
+}
+
+/* ===== Gradientes por tipo Pokémon ===== */
+.bg-normal {
+    background: linear-gradient(135deg, #b7b7a9, #dcdcbf);
+}
+
+.bg-fire {
+    background: linear-gradient(135deg, #ff6b00, #ffb347);
+    color: white;
+}
+
+.bg-water {
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+}
+
+.bg-electric {
+    background: linear-gradient(135deg, #f9d423, #ff4e50);
+}
+
+.bg-grass {
+    background: linear-gradient(135deg, #56ab2f, #a8e063);
+}
+
+.bg-ice {
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+}
+
+.bg-fighting {
+    background: linear-gradient(135deg, #d76d77, #ffaf7b);
+}
+
+.bg-poison {
+    background: linear-gradient(135deg, #9d50bb, #6e48aa);
+    color: white;
+}
+
+.bg-ground {
+    background: linear-gradient(135deg, #c79081, #dfa579);
+}
+
+.bg-flying {
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+}
+
+.bg-psychic {
+    background: linear-gradient(135deg, #ff6cab, #7366ff);
+}
+
+.bg-bug {
+    background: linear-gradient(135deg, #a8c66c, #56ab2f);
+}
+
+.bg-rock {
+    background: linear-gradient(135deg, #b79891, #94716b);
+    color: white;
+}
+
+.bg-ghost {
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    color: white;
+}
+
+.bg-dragon {
+    background: linear-gradient(135deg, #8360c3, #2ebf91);
+    color: white;
+}
+
+.bg-dark {
+    background: linear-gradient(135deg, #434343, #000000);
+    color: white;
+}
+
+.bg-steel {
+    background: linear-gradient(135deg, #8e9eab, #eef2f3);
+    color: white;
+}
+
+.bg-fairy {
+    background: linear-gradient(135deg, #ff9a9e, #fecfef);
+}
+
+/* Evoluciones */
+.evolutions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.evolutions .evolution-card:only-child {
+    grid-column: 1 / -1;
+    /* ocupa desde la primera hasta la última columna */
+}
+
+.evolution-card {
+    justify-self: center;
+    background: #fff;
+    border-radius: 0.8rem;
+    padding: 0.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.evolutions .evolution-card:only-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    /* centra la única card */
+}
+
+.evolution-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+
+/*Animacion*/
+.hidden {
+    display: none;
+    /* oculto por defecto */
+}
+
+.evolution-card a {
+    text-decoration: none;
+    /* quita subrayado */
+    color: black;
+    /* hereda el color del texto del contenedor */
+    font-weight: 500;
+    /* opcional: hace el texto un poco más destacado */
+}
+
+/* Opcional: efecto hover */
+.evolution-card a:hover {
+    text-decoration: underline;
+    /* solo aparece subrayado al pasar el mouse */
+    color: #ff5959;
+    /* o cualquier color que quieras */
+}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="object-tools">
+    <ul class="object-tools">
+      <li>
+        <a class="addlink" href="{% url 'importar-pokemons' %}">Importar Pokémon</a>
+      </li>
+    </ul>
+  </div>
+{% endblock %}
+
+{% block extra_scripts %}
+    <script src="{% static 'js/estadistics_pokemons.js' %}"></script>
+{% endblock %}

@@ -16,8 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from listado_pokemon import views
+from listado_pokemon import views as listado_views
+from accounts import views as view_accounts
+from whatsappbot import views as view_whatsappbot
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('listado_pokemon/', include("listado_pokemon.urls")),
+    path('webhook/', include('whatsappbot.urls')),
+    path('accounts/', include("django.contrib.auth.urls")),
+    path('accounts/', include("allauth.urls")),
+    path('accounts/', include("accounts.urls")),
+    
 ]
